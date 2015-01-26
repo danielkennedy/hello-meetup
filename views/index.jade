@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  ul
+    li Application instance: #{index}
+    li Listening on: #{addr}
+  button(id='kill-switch', type='button') Kill App
+  h3 Environment Details:
+  pre= JSON.stringify(process.env, null, 2)
