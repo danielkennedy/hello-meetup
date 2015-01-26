@@ -5,3 +5,11 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
+    script(type="text/javascript", src="/javascripts/jquery.min.js")
+    script.
+      $('#kill-switch').click(function kill() {
+        $.post("/kill", function (data) {
+          // Shouldn't get anything back...
+          alert(data);
+        });
+      });
